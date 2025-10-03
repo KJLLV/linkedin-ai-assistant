@@ -6,8 +6,11 @@ document.getElementById("generate").addEventListener("click", () => {
         return;
       }
 
+      console.log("Scraped job data:", jobData);
+
       // Send to backend (replace with your API later)
-      fetch("http://localhost:5000/generate", {
+      
+      fetch("http://localhost:5050/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(jobData)
@@ -22,3 +25,6 @@ document.getElementById("generate").addEventListener("click", () => {
     });
   });
 });
+
+
+
