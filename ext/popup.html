@@ -2,11 +2,31 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+
 </head>
 <body>
-  <h3>LinkedIn AI Assistant</h3>
-  <button id="generate">Generate Resume & Cover Letter</button>
-  <div id="output"></div>
+  <h2>LinkedIn AI Assistant</h2>
+
+  <button id="generate">✨ Generate Resume & Cover Letter</button>
+
+  <div id="status"></div>
+
+  <div id="output" class="hidden">
+    <div class="section">
+      <h4>Resume</h4>
+      <pre id="resume"></pre>
+      <button class="copy-btn" data-target="resume">📋 Copy Resume</button>
+    </div>
+
+    <div class="section">
+      <h4>Cover Letter</h4>
+      <pre id="coverLetter"></pre>
+      <button class="copy-btn" data-target="coverLetter">📋 Copy Cover Letter</button>
+    </div>
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
+

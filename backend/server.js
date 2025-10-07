@@ -8,8 +8,13 @@ dotenv.config();
 const app = express();
 const PORT = 5050;
 
+if (!process.env.CHROME_EXT_ID) {
+  console.error("❌ CHROME_EXT_ID not found in .env. CORS will fail!");
+  process.exit(1); // stop server to avoid undefined behavior
+}
+
 const allowedOrigins = [
-  `chrome-extension://${env.CHROME_EXT_ID}`  // your extension ID
+  `chrome-extension://${process.env.CHROME_EXT_ID}`  // your extension ID
 ];
  // Allow requests from all origins (for development)
 app.use(cors({
